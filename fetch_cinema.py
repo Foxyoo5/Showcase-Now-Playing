@@ -22,7 +22,7 @@ pattern = re.compile(
 all_matches = pattern.findall(html)
 
 # only keep movies tagged exactly "Out Now"
-matches = [m for m in all_matches if m[3].strip() == "Out Now"][:10]
+matches = [m for m in all_matches if m[3].strip() == "Out Now"][:5]
 
 print(f"Total cards found: {len(all_matches)}")
 print(f"Found {len(matches)} 'Out Now' movies")
@@ -44,7 +44,7 @@ for href, poster, title, status in matches:
 rss = '<?xml version=' + q + '1.0' + q + ' encoding=' + q + 'UTF-8' + q + '?>'
 rss += "<rss version=" + q + "2.0" + q + ">"
 rss += "<channel>"
-rss += "<title>Movies Out Now</title>"
+rss += "<title>Now in Cinema</title>"
 rss += "<link>https://foxyoo5.github.io/Showcase-Now-Playing/now-playing.xml</link>"
 rss += "<description>Movies currently in cinemas from Showcase Cinemas</description>"
 rss += items_xml
